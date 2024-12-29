@@ -57,5 +57,5 @@ Annotation Controls (Video: https://youtu.be/9lW3_g1fjnA?si=X49Vz1ow45NMMYVn)
 
 # References:
 * SAM2 Repository: [https://github.com/facebookresearch/segment-anything-2](https://github.com/facebookresearch/segment-anything-2)
-* Original Repository: [https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything)
+* Original Repository: https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything
 
