@@ -9,7 +9,7 @@
 # Installation
 ```shell
 git clone https://github.com/5PB-3-4/ONNX-SAM2.1-Segment-Anything.git -b sam2.1
-cd ONNX-SAM2-Segment-Anything
+cd ONNX-SAM2.1-Segment-Anything
 pip install -r requirements.txt
 ```
 ### ONNX Runtime
