@@ -8,7 +8,7 @@
 
 # Installation
 ```shell
-git clone https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything.git
+git clone https://github.com/5PB-3-4/ONNX-SAM2.1-Segment-Anything.git -b sam2.1
 cd ONNX-SAM2-Segment-Anything
 pip install -r requirements.txt
 ```
@@ -20,8 +20,8 @@ Otherwise:
 `pip install onnxruntime`
 
 # ONNX model
-- Use this Google Colab notebook to convert the encoder and decoder models: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tqdYbjmFq4PK3Di7sLONd0RkKS0hBgId?usp=sharing)
-- Place the models in the `models` folder
+- Read [this](https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything/issues/18)
+- The encoder and decoder models can download [this](https://huggingface.co/rectlabel/segment-anything-onnx-models/tree/main)
 
 # Original Semgent Anything Model 2 (SAM2)
 The original SAM2 model can be found in this repository: [SAM2 Repository](https://github.com/facebookresearch/segment-anything-2)
@@ -34,7 +34,7 @@ The original SAM2 model can be found in this repository: [SAM2 Repository](https
 ## **Image inference**:
 Runs the image segmentation model on an image given some points defined in the script.
  ```shell
- python image_segmentation.py
+ python demo_sam2.exe -i <your image file path> -e model/sam2.1_small_preprocess.onnx -d model/sam2.1_small.onnx
  ```
 
 Usage:
@@ -46,7 +46,7 @@ Usage:
 ## **SAM2 Annotation App**:
 A minimal GUI to annotate images with the SAM2 model.
  ```shell
- python webcam_depth_estimation.py
+python demo_sam2.exe -i <your image file path> -e model/sam2.1_small_preprocess.onnx -d model/sam2.1_small.onnx -a
  ```
 Annotation Controls (Video: https://youtu.be/9lW3_g1fjnA?si=X49Vz1ow45NMMYVn)
 - **Left click**: Adds a positive point, but if another point is close enough, it will delete it
@@ -57,4 +57,5 @@ Annotation Controls (Video: https://youtu.be/9lW3_g1fjnA?si=X49Vz1ow45NMMYVn)
 
 # References:
 * SAM2 Repository: [https://github.com/facebookresearch/segment-anything-2](https://github.com/facebookresearch/segment-anything-2)
+* Original Repository: [https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything)
 
