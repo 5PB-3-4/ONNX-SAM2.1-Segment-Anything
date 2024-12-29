@@ -21,7 +21,7 @@ Otherwise:
 
 # ONNX model
 - Read [this](https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything/issues/18)
-- The encoder and decoder models can download [this](https://huggingface.co/rectlabel/segment-anything-onnx-models/tree/main)
+- The encoder and decoder models can download from [here](https://huggingface.co/rectlabel/segment-anything-onnx-models/tree/main)
 
 # Original Semgent Anything Model 2 (SAM2)
 The original SAM2 model can be found in this repository: [SAM2 Repository](https://github.com/facebookresearch/segment-anything-2)
