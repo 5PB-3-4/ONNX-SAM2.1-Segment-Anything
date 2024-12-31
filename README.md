@@ -34,7 +34,7 @@ The original SAM2 model can be found in this repository: [SAM2 Repository](https
 ## **Image inference**:
 Runs the image segmentation model on an image given some points defined in the script.
  ```shell
- python demo_sam2.exe -i <your image file path> -e model/sam2.1_small_preprocess.onnx -d model/sam2.1_small.onnx
+ python demo_sam2.py -i <your image file path> -e model/sam2.1_small_preprocess.onnx -d model/sam2.1_small.onnx
  ```
 
 Usage:
@@ -46,7 +46,7 @@ Usage:
 ## **SAM2 Annotation App**:
 A minimal GUI to annotate images with the SAM2 model.
  ```shell
-python demo_sam2.exe -i <your image file path> -e model/sam2.1_small_preprocess.onnx -d model/sam2.1_small.onnx -a
+python demo_sam2.py -i <your image file path> -e model/sam2.1_small_preprocess.onnx -d model/sam2.1_small.onnx -a
  ```
 Annotation Controls (Video: https://youtu.be/9lW3_g1fjnA?si=X49Vz1ow45NMMYVn)
 - **Left click**: Adds a positive point, but if another point is close enough, it will delete it
