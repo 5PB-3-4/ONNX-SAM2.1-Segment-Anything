@@ -1,3 +1,2 @@
 opencv-python
 onnxruntime-gpu
-cap-from-youtube
