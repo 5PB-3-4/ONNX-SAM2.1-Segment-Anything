@@ -1,4 +1,4 @@
-import argparse
+# import argparse
 import os
 import tkinter as tk
 from tkinter import filedialog
@@ -6,6 +6,7 @@ from typing import Any
 
 import cv2
 import numpy as np
+import yaml
 from PIL import Image, ImageTk
 
 from sam2 import SAM21A
@@ -85,6 +86,7 @@ class SAM21AnnotationApp:
     if file_path:
       self.image_path = file_path
       self.image = cv2.imread(self.image_path)
+      self.image = cv2.resize(self.image, (1280, 720))
       self.mask_image = self.image.copy()
       self.sam2.set_image(self.image)
       self.display_image()
@@ -399,6 +401,12 @@ class SAM21AnnotationApp:
     return is_close, closest_rectangle
 
 
+class dctDotNotate(dict):
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    self.__dict__ = self
+
+
 def app_main(image: np.ndarray, args: Any) -> None:
   root = tk.Tk()
 
@@ -475,12 +483,16 @@ def script_main(image: np.ndarray, args: Any) -> None:
 
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description="SAM2 Demo")
-  parser.add_argument("--input", "-i", type=str, help="Set input path to a certain image.")
-  parser.add_argument("--encode", "-e", type=str, help="Set model path to encoder (preprocess).")
-  parser.add_argument("--decode", "-d", type=str, help="Set input path to a decoder (main process).")
-  parser.add_argument("--appmode", "-a", action="store_true", help="Set flag to entry annotation app.")
-  args = parser.parse_args()
+  # parser = argparse.ArgumentParser(description="SAM2 Demo")
+  # parser.add_argument("--input", "-i", type=str, help="Set input path to a certain image.")
+  # parser.add_argument("--encode", "-e", type=str, help="Set model path to encoder (preprocess).")
+  # parser.add_argument("--decode", "-d", type=str, help="Set input path to a decoder (main process).")
+  # parser.add_argument("--appmode", "-a", action="store_true", help="Set flag to entry annotation app.")
+  # args = parser.parse_args()
+
+  with open("./config/config.yaml") as f:
+    cfg = yaml.safe_load(f)
+    args = dctDotNotate(cfg)
 
   try:
     img = cv2.imread(esc_slash(str(args.input)), cv2.IMREAD_COLOR)
@@ -489,5 +501,6 @@ if __name__ == "__main__":
         app_main(img, args)
       else:
         script_main(img, args)
-  except Exception:
+  except Exception as ex:
+    print(ex)
     pass

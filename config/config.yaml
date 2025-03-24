@@ -1,0 +1,4 @@
+input: "doc/img/sam2_mask_with_boxes.png"
+encode: "models/sam2.1_base_plus_preprocess.onnx"
+decode: "models/sam2.1_base_plus.onnx"
+appmode: true
