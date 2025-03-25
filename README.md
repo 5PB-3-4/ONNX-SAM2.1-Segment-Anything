@@ -1,4 +1,4 @@
-# ONNX-SAM2-Segment-Anything
+# ONNX-SAM2.1-Segment-Anything
 ![!ONNX-SAM2-Segment-Anything](https://github.com/ibaiGorordo/ONNX-SAM2-Segment-Anything/raw/main/doc/img/sam2_mask_with_boxes.png)
 
 # Important
